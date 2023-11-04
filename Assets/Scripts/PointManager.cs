@@ -30,8 +30,4 @@ public class PointManager : MonoBehaviour
     public int GetItemCount(){
         return itemCollected;
     }
-
-    private void Update() {
-        Debug.Log(itemCollected);
-    }
 }
