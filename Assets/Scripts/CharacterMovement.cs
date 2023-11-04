@@ -41,12 +41,16 @@ public class CharacterMovement : MonoBehaviour
         }
         
 
-        if(Input.GetButtonDown("Jump") && IsGrounded()){
-            anim.SetBool("isJumping", true);
-            rb.velocity = new Vector2(rb.velocity.x, jump);
+        if(Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W)){
+            if(IsGrounded()){
+                anim.SetBool("isJumping", true);
+                rb.velocity = new Vector2(rb.velocity.x, jump);
+            }else{
+                anim.SetBool("isJumping", false);
+            }
         }
 
-        if(Input.GetButtonDown("Jump") && rb.velocity.y > 0f)
+        if(Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W) && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y*0.5f);
         }
@@ -61,7 +65,7 @@ public class CharacterMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.70f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.7f, groundLayer);
     }
 
     private void FixedUpdate() 
