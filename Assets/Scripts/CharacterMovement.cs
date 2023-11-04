@@ -9,7 +9,6 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
     private float jump = 10f;
-    private BoxCollider2D collider;
     private Animator anim;
     private float moveHorizontal;
     
@@ -21,7 +20,6 @@ public class CharacterMovement : MonoBehaviour
 
         anim = GetComponent<Animator>();
         anim.SetFloat("Horizontal",1);
-        collider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
