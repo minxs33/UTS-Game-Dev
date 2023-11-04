@@ -8,7 +8,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
-    private float jump = 20f;
+    private float jump = 10f;
     private BoxCollider2D collider;
     private Animator anim;
     private float moveHorizontal;
@@ -43,16 +43,8 @@ public class CharacterMovement : MonoBehaviour
 
         if(Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W)){
             if(IsGrounded()){
-                anim.SetBool("isJumping", true);
                 rb.velocity = new Vector2(rb.velocity.x, jump);
-            }else{
-                anim.SetBool("isJumping", false);
             }
-        }
-
-        if(Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W) && rb.velocity.y > 0f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y*0.5f);
         }
 
         if(IsGrounded()){
