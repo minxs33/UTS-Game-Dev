@@ -55,7 +55,7 @@ public class CharacterMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.7f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.45f, groundLayer);
     }
 
     private void FixedUpdate() 

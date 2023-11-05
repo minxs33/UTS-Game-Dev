@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class LifeManager : MonoBehaviour
 {
-    [SerializeField] private GameObject playerPrefabs;
     public static LifeManager Instance;
     private int PlayerLife = 3;
     public TextMeshProUGUI PlayerLifeText;
