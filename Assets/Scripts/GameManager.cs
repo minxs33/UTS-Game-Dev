@@ -15,12 +15,12 @@ public class GameManager : MonoBehaviour
         UpdateGameState(GameState.Menu);
     }
 
-    void Awake(){
-        Instance = this;
-        if(Instance == null){
-            Instance = this;
-        }else{
-            Destroy(gameObject);
+    void Awake()
+    {
+        if (Instance != null && Instance != this){ 
+            Destroy(this); 
+        } else { 
+            Instance = this; 
         }
     }
 
@@ -31,9 +31,13 @@ public class GameManager : MonoBehaviour
             case GameState.Menu:
                 HandleMenu();
                 break;
+            case GameState.Play:
+                HandlePlay();
+                break;
             case GameState.Victory:
                 break;
             case GameState.Lose:
+                HandleLose();
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -42,14 +46,26 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newState);
     }
 
+    //Handler kosong = di-handle oleh manager yang sudah subscribe dengan GameManager
     private void HandleMenu()
     {
-        
+
+    }
+
+    private void HandleLose()
+    {
+
+    }
+
+    private void HandlePlay()
+    {
+        LevelManager.Instance.StartGame();
     }
 }
 
 public enum GameState {
     Menu,
+    Play,
     Victory,
     Lose
 }

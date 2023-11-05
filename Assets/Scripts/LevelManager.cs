@@ -24,8 +24,15 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public async void StartGame(){
+        var scene = SceneManager.LoadSceneAsync("GameScene");
+        scene.allowSceneActivation = false;
+        await Task.Delay(500);
+        scene.allowSceneActivation = true;
+    }
+    
     public async void LoadScene(string sceneName) {
-        Loader.Instance.Reset();
         var scene = SceneManager.LoadSceneAsync(sceneName);
         scene.allowSceneActivation = false;
 
@@ -36,20 +43,9 @@ public class LevelManager : MonoBehaviour
         
         _playerAnimator = Player.GetComponent<Animator>();
         _playerAnimator.enabled = false;
-        
-        Loader.Instance.SetActive(true);
-        
-        await Task.Delay(1000);
-
-        do{
-            Loader.Instance.SetTarget(1);
-            await Task.Delay(100);
-            Loader.Instance.SetLoaderFillAmount(scene.progress);
-        } while (scene.progress < 0.9f);
-
-        scene.allowSceneActivation = true;
+    
         await Task.Delay(500);
-        Loader.Instance.SetActive(false);
+        scene.allowSceneActivation = true;
     }
 
 }
