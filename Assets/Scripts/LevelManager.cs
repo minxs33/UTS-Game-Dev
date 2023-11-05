@@ -25,11 +25,8 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public async void StartGame(){
-        var scene = SceneManager.LoadSceneAsync("GameScene");
-        scene.allowSceneActivation = false;
-        await Task.Delay(500);
-        scene.allowSceneActivation = true;
+    public void StartGame(){
+        SceneManager.LoadSceneAsync("GameScene");
     }
     
     public async void LoadScene(string sceneName) {
