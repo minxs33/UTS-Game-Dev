@@ -23,14 +23,25 @@ public class PlayerRespawn : MonoBehaviour
     public void Respawn()
     {
         playerPosition = LastCheckpoint.GetPlayerPosition();
-        GameObject playerPrefabs = Instantiate(Player, playerPosition, quaternion.identity);
+        if(Player != null){
+            StartCoroutine(Delay(playerPosition));
+        }else{
+            Debug.LogError("Player Prefabs tidak terinisiasi di inspector");
+        }
+        
+    }
+
+    private IEnumerator Delay(Vector2 pos){
+        yield return new WaitForSeconds(1.0f);
+
+        GameObject playerPrefabs = Instantiate(Player, pos, quaternion.identity);
         playerPrefabs.transform.SetParent(gameObject.transform, false);
         playerPrefabs.name = playerPrefabs.name.Replace("(Clone)", "");
             if (playerPrefabs != null)
             {
                 _virtualCamera.GetComponent<CinemachineVirtualCamera>().Follow = playerPrefabs.transform;
             }else{
-                Debug.LogError("Virtual Camera atau Player tidak terinisiasi di inspector");
+                Debug.LogError("Virtual Camera tidak terinisiasi atau Player Prefabs tidak ter-instantiate");
             }
     }
 }
