@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void StartGame(){
-        SceneManager.LoadSceneAsync("GameScene");
+        SceneManager.LoadSceneAsync("Level 1");
     }
     
     public async void LoadScene(string sceneName) {
