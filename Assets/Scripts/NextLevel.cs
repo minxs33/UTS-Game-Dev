@@ -10,6 +10,7 @@ public class NextLevel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.transform.CompareTag("Player")){
+            LastCheckpoint.SetPlayerPosition(new Vector2(0f,0f));
             LevelManager.Instance.LoadScene(sceneName);
         }
     }
