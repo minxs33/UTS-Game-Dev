@@ -15,7 +15,6 @@ public class Collectables : MonoBehaviour
                 BoxCollider2D Collider = referenceCollider.GetComponent<BoxCollider2D>();
                 Collider.isTrigger = true;
             }
-            Debug.Log(PointManager.Instance.GetItemObjectiveCount());
             Destroy(gameObject);
         }
     }

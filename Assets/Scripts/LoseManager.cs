@@ -37,8 +37,7 @@ public class LoseManager : MonoBehaviour
             restartMenuPanel.SetActive(true);
             statsMenuCanvas.SetActive(false);
         }
-        
-        Debug.Log(state);
+
     }
 
     private void Restart(){
