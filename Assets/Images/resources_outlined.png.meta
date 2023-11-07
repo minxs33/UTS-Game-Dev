@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9983378df1c46b7409221ceffca8ee27
+guid: 529bc2bb7ac9c8c43951d3b566561fec
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,55 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: resources_basic_0
+      name: resources_outlined_0
       rect:
         serializedVersion: 2
         x: 220
-        y: 174
-        width: 16
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c23d57365f248174cad03f997b68b7bf
-      internalID: -1768389262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: resources_basic_1
-      rect:
-        serializedVersion: 2
-        x: 220
-        y: 150
-        width: 15
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c92790f9a2159f74486914456bff950b
-      internalID: 982542214
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: resources_basic_2
-      rect:
-        serializedVersion: 2
-        x: 220
-        y: 125
-        width: 20
-        height: 17
+        y: 173
+        width: 17
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,8 +119,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f560066b890100469b8245c8cd4c707
-      internalID: -1635928904
+      spriteID: ea1926126ed313f4681aaae211a13fb1
+      internalID: 361929583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_outlined_1
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 149
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6940c613611bb5c4db93260fa813ed3f
+      internalID: -1808921509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_outlined_2
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 125
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e0d2d8751a39c4ebfbd8a9f7a7a9fd
+      internalID: 1637383334
       vertices: []
       indices: 
       edges: []
@@ -178,10 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      resources_basic_0: -1768389262
-      resources_basic_1: 982542214
-      resources_basic_2: -1635928904
-      resources_basic_3: -1408603737
+      resources_outlined_0: 361929583
+      resources_outlined_1: -1808921509
+      resources_outlined_2: 1637383334
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

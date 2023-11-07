@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8849848367446638624, guid: 9e870d7369ed6f14492a1fb32b0e6d97, type: 3}
       propertyPath: m_Name
-      value: Item
+      value: Copper Item
       objectReference: {fileID: 0}
     - target: {fileID: 8849848367446638631, guid: 9e870d7369ed6f14492a1fb32b0e6d97, type: 3}
       propertyPath: m_RootOrder
@@ -59,6 +59,14 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 8849848367446638635, guid: 9e870d7369ed6f14492a1fb32b0e6d97, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849848367446638635, guid: 9e870d7369ed6f14492a1fb32b0e6d97, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e870d7369ed6f14492a1fb32b0e6d97, type: 3}
 --- !u!1 &6903176479829555601 stripped
@@ -107,7 +115,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1768389262, guid: 9983378df1c46b7409221ceffca8ee27, type: 3}
+  m_Sprite: {fileID: 361929583, guid: 529bc2bb7ac9c8c43951d3b566561fec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
