@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
             Destroy(canvas);
             Destroy(eventSystem);
         }
-        LevelManager.Instance.LoadScene("Finish");
+        // LevelManager.Instance.LoadScene("Finish");
     }
 
     

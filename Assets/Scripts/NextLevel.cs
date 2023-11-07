@@ -9,6 +9,7 @@ public class NextLevel : MonoBehaviour
 {
     [SerializeField] private string sceneName;
     [SerializeField] private string text;
+    [SerializeField] bool isTumang;
     private GameObject canvases, alertCanvas;
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -23,6 +24,18 @@ public class NextLevel : MonoBehaviour
         canvases = GameObject.Find("Canvases");
         Transform canvas = canvases.transform.Find("Canvas");
         alertCanvas = canvas.Find("AlertCanvas").gameObject;
+
+        Transform tumang = alertCanvas.transform.Find("tumang");
+        Transform dayangSumbi = alertCanvas.transform.Find("dayangSumbi");
+        if(isTumang){
+            
+            dayangSumbi.gameObject.SetActive(false);
+            tumang.gameObject.SetActive(true);
+        }else{  
+            dayangSumbi.gameObject.SetActive(true);
+            tumang.gameObject.SetActive(false);
+        }
+
         Transform alertCanvasText = alertCanvas.transform.Find("text");
         TextMeshProUGUI alertText = alertCanvasText.GetComponent<TextMeshProUGUI>();
         alertText.text = text;
