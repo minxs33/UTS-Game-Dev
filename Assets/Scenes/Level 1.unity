@@ -1026,7 +1026,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7955917774021275968, guid: 172ab69f96d311547bf23bcc119b5539, type: 3}
       propertyPath: m_Name
-      value: ItemStatus
+      value: AlertCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 7955917774021275968, guid: 172ab69f96d311547bf23bcc119b5539, type: 3}
       propertyPath: m_IsActive
@@ -1115,6 +1115,10 @@ PrefabInstance:
     - target: {fileID: 7955917774021275969, guid: 172ab69f96d311547bf23bcc119b5539, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7955917774062864513, guid: 172ab69f96d311547bf23bcc119b5539, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 172ab69f96d311547bf23bcc119b5539, type: 3}
@@ -4966,6 +4970,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1513822406}
     m_Modifications:
+    - target: {fileID: 762151513856653240, guid: d6209a047426dfd418b9f49cdcfec54c, type: 3}
+      propertyPath: text
+      value: Aku harus mengumpulkan alat jahit di daerah sini dulu
+      objectReference: {fileID: 0}
+    - target: {fileID: 762151513856653240, guid: d6209a047426dfd418b9f49cdcfec54c, type: 3}
+      propertyPath: alertCanvas
+      value: 
+      objectReference: {fileID: 2119919045}
     - target: {fileID: 762151513856653240, guid: d6209a047426dfd418b9f49cdcfec54c, type: 3}
       propertyPath: itemStatusCanvas
       value: 

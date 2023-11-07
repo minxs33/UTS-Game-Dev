@@ -42,6 +42,5 @@ public class LoseManager : MonoBehaviour
 
     private void Restart(){
         GameManager.Instance.UpdateGameState(GameState.Play);
-        Debug.Log("clicked");
     }
 }

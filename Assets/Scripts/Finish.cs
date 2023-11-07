@@ -1,0 +1,29 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Finish : MonoBehaviour
+{
+    [SerializeField] private string sceneName;
+    [SerializeField] private GameObject itemStatusCanvas;
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.transform.CompareTag("Player")){
+            LastCheckpoint.SetPlayerPosition(new Vector2(0f,0f));
+            LevelManager.Instance.LoadScene(sceneName);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.transform.CompareTag("Player")){
+            itemStatusCanvas.SetActive(true);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other) {
+        if(other.transform.CompareTag("Player")){
+            itemStatusCanvas.SetActive(false);
+        }
+    }
+}
