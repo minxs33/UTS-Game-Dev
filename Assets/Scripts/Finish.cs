@@ -11,7 +11,7 @@ public class Finish : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.transform.CompareTag("Player")){
-            GameManager.Instance.UpdateGameState(GameState.Victory);
+            GameManager.Instance.UpdateGameState(GameState.Finish);
         }
     }
 
