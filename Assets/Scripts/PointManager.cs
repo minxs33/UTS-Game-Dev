@@ -8,6 +8,7 @@ public class PointManager : MonoBehaviour
 {
     public static PointManager Instance;
     private int itemCollected = 0;
+    private int itemObjective = 0;
     public TextMeshProUGUI itemCollectedText;
     void Awake()
     {
@@ -19,15 +20,27 @@ public class PointManager : MonoBehaviour
     }
 
     private void Start() {
-        itemCollectedText.text = itemCollected.ToString();
+        itemCollectedText.text = itemCollected.ToString()+" / "+itemObjective.ToString();
+    }
+
+    public void SetText() {
+        itemCollectedText.text = itemCollected.ToString()+" / "+itemObjective.ToString();
     }
     
     public void AddItem(){
         itemCollected += 1;
-        itemCollectedText.text = itemCollected.ToString();
+        itemCollectedText.text = itemCollected.ToString()+" / "+itemObjective.ToString();
     }
 
     public int GetItemCount(){
         return itemCollected;
+    }
+
+    public void SetItemObjective(int total){
+        itemObjective = total;
+    }
+
+    public int GetItemObjectiveCount(){
+        return itemObjective;
     }
 }

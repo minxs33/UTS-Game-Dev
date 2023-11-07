@@ -22,6 +22,7 @@ public class LoseManager : MonoBehaviour
     private void GameManagerOnGameStateChanged(GameState state)
     {
         if(state == GameState.Lose){
+            // mencari direktori canvas status menu, restart menu panel, dan button
             GameObject parentGameObject = GameObject.Find("Canvases");
             Transform loseCanvas = parentGameObject.transform.Find("LoseCanvas"); 
             restartMenuPanel = loseCanvas.transform.Find("RestartMenu").gameObject;

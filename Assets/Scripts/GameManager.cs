@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
                 HandlePlay();
                 break;
             case GameState.Victory:
+                HandleVictory();
                 break;
             case GameState.Lose:
                 HandleLose();
@@ -52,11 +53,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void HandleLose()
-    {
-
-    }
-
     private void HandlePlay()
     {
         GameObject canvas = GameObject.Find("Canvases");
@@ -67,6 +63,18 @@ public class GameManager : MonoBehaviour
         }
         LevelManager.Instance.StartGame();
     }
+
+    private void HandleLose()
+    {
+
+    }
+
+    private void HandleVictory()
+    {
+        LevelManager.Instance.LoadScene("Finish");
+    }
+
+    
 }
 
 public enum GameState {

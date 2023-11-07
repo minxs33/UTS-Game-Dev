@@ -18,7 +18,7 @@ public class NextLevel : MonoBehaviour
         }
     }
 
-    private void Start() {
+    private void FindCanvas() {
         // mencari direktori text AlertCanvas
         canvases = GameObject.Find("Canvases");
         Transform canvas = canvases.transform.Find("Canvas");
@@ -30,6 +30,7 @@ public class NextLevel : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.transform.CompareTag("Player")){
+            FindCanvas();
             alertCanvas.SetActive(true);
         }
     }
