@@ -8,7 +8,7 @@ public class LifeManager : MonoBehaviour
 {
     public static LifeManager Instance;
     private int PlayerLife = 3;
-    public TextMeshProUGUI PlayerLifeText;
+    private TextMeshProUGUI PlayerLifeTMP;
     void Awake()
     {
         if (Instance != null && Instance != this){ 
@@ -19,12 +19,14 @@ public class LifeManager : MonoBehaviour
     }
 
     private void Start() {
-        PlayerLifeText.text = PlayerLife.ToString();
+        GameObject PlayerLifeText = GameObject.FindWithTag("LifeText");
+        PlayerLifeTMP = PlayerLifeText.GetComponent<TextMeshProUGUI>();
+        PlayerLifeTMP.text = PlayerLife.ToString();
     }
 
    public void RemoveLife(){
         PlayerLife -= 1;
-        PlayerLifeText.text = PlayerLife.ToString();
+        PlayerLifeTMP.text = PlayerLife.ToString();
     }
 
     public int GetLifeCount(){

@@ -59,6 +59,12 @@ public class GameManager : MonoBehaviour
 
     private void HandlePlay()
     {
+        GameObject canvas = GameObject.Find("Canvases");
+        GameObject eventSystem = GameObject.Find("EventSystem");
+        if(canvas != null && eventSystem != null){
+            Destroy(canvas);
+            Destroy(eventSystem);
+        }
         LevelManager.Instance.StartGame();
     }
 }

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Checkpoint
+  - ItemText
+  - LifeText
   layers:
   - Default
   - TransparentFX
