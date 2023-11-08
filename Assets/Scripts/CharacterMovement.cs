@@ -5,11 +5,12 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     Rigidbody2D rb;
-    [SerializeField] private float speed;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
+    private float speed = 5f;
     private float jump = 10f;
     private Animator anim;
+    private new BoxCollider2D collider;
     private float moveHorizontal;
     
     void Start()
@@ -20,6 +21,8 @@ public class CharacterMovement : MonoBehaviour
 
         anim = GetComponent<Animator>();
         anim.SetFloat("Horizontal",1);
+
+        collider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -45,11 +48,26 @@ public class CharacterMovement : MonoBehaviour
             }
         }
 
+        if(Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.S)){
+            anim.SetBool("isCrouch", true);
+            collider.size = new Vector2(0.9375f,0.88f);
+            collider.offset = new Vector2(0f,-0.09f);
+            speed = 2.5f;
+        }else if(Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.S)){
+            anim.SetBool("isCrouch",false);
+            collider.size = new Vector2(0.9375f,1.14f);
+            collider.offset = Vector2.zero;
+            speed = 5f;
+        }
+
+        if(collider.size == new Vector2(0.9375f,0.88f)){
+            anim.SetBool("isCrouch", true);
+        }
+
         if(IsGrounded()){
             anim.SetBool("isJumping", false);
         }else if(IsGrounded() == false){
             anim.SetBool("isJumping", true);
-
         }
     }
 

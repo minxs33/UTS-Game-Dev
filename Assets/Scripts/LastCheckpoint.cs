@@ -20,4 +20,5 @@ public class LastCheckpoint : MonoBehaviour
     public static Vector2 GetPlayerPosition(){
         return TempPlayerPos;
     }
+    
 }
